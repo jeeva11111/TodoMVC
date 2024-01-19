@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Todo Page";
+}
+<!-- Add these links to the head of your HTML file -->
+
+
+
+
+<button onclick="AddedModal()" class="btn btn-outline-primary">Task Todo</button>
+<br />
+<br />
+<table class="table table-bordered d-lg-table">
+    <thead>
+        <tr>
+
+            <th>Id</th>
+            <th>Task</th>
+            <td>Description</td>
+            <td>Date</td>
+            <td>Is Done</td>
+        </tr>
+    </thead>
+    <tbody id="tblTodo" class="text-center">
+</table>
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Todo Item</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Add your modal content here -->
+                    <form id="addTodoForm" onsubmit="event.preventDefault(); AddTodoModal();">
+
+                    <div class="form-group">
+                        <label for="taskToDo">Task To Do:</label>
+                        <input type="text" class="form-control" id="taskToDo" name="TaskToDo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input type="text" class="form-control" id="description" name="Description" >                      
+                    </div>
+                    <div class="form-group">
+                        <label for="createdData">Created Data:</label>
+                        <input type="date" class="form-control" id="createdData" name="CreatedData">
+                    </div>
+                    <div class="form-group">
+                        <label for="isActive">Is Active:</label>
+                        <input type="radio" value="true" id="isActive" name="IsActive">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Todo</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
